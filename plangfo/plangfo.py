@@ -2,7 +2,7 @@
 
 import os
 import sys
-from data import languages
+from .data import languages
 
 class Detect(object):
     def __init__(self, directory):
