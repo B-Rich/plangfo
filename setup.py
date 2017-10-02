@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name="plangfo",
     packages=["plangfo"],
-    version="0.1",
+    version="0.1.6",
     description="A module for language statistics. Currently has blob languages detection.",
     author="DizAzTor",
     author_email="dizaztor@protonmail.com",
