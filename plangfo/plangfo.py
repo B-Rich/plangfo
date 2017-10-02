@@ -2,7 +2,7 @@
 
 import os
 import sys
-from .data import languages
+from data import languages
 
 class Detect(object):
     def __init__(self, directory):
@@ -50,18 +50,24 @@ class Detect(object):
     def detect(self, **kwargs):
         all_files = self.get_all_files()
         bytes_ = self.get_bytes()
+        sorted_bytes = sorted(bytes_.items(), key=lambda x: x[1], reverse=True)
+        sb_result = {}
+        for key, val in sorted_bytes:
+            sb_result[key] = val
         percentage = self.get_percentage()
         sorted_percentage = sorted(percentage.items(), key=lambda x: x[1], reverse=True)
-        result = {}
+        sp_result = {}
         for key, val in sorted_percentage:
-            result[key] = val
+            sp_result[key] = val
         if len(kwargs.items()) == 1:
             for parm, value in kwargs.items():
                 if parm == "all_files" and value is True: return(all_files)
                 elif parm == "bytes" and value is True: return(bytes_)
+                elif parm == "sorted_bytes" and value is True: return(sb_result)
                 elif parm == "percentage" and value is True: return(percentage)
-                elif parm == "sorted_percentage" and value is True: return(result)
+                elif parm == "sorted_percentage" and value is True: return(sp_result)
                 else: return(False)
+
         else:
             return(False)
 
@@ -79,6 +85,8 @@ def main():
             output = detect.detect(percentage=True)
         elif sys.argv[1] == "-sp" or sys.argv[1] == "--sorted-percentage":
             output = detect.detect(sorted_percentage=True)
+        elif sys.argv[1] == "-sb" or sys.argv[1] == "--sorted-bytes":
+            output = detect.detect(sorted_bytes=True)
         else:
             output = "\rThat's an argument I don't recognize. :("
         print(output)

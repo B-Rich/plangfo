@@ -25,15 +25,14 @@ To do that, use `plangfo [option] [directory]`
 | --------- | ------------------- |
 | a         | --all-files         |
 | b         | --bytes             |
+| sb        | --sorted-bytes      |
 | p         | --percentage        |
 | sp        | --sorted-percentage |
 
 
 # TODO:
-| TODO      |                     |
-| --------- | ------------------- |
-| sb        | --sorted-bytes      |
 
+- [x] `sb` | `--sorted-bytes`
 
 # Languages
 
