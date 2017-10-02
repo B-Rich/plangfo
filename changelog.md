@@ -6,3 +6,6 @@
 
 # 0.1.8
 * fixed an issue
+
+# 0.2
+* fixed the same issue :/
