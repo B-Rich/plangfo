@@ -9,3 +9,7 @@
 
 # 0.2
 * fixed the same issue :/
+
+# 0.2.6
+* fixed an issue.
+
