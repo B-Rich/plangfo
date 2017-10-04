@@ -2,7 +2,10 @@
 
 import os
 import sys
-from .data import languages
+try:
+    from .data import languages
+except ModuleNotFoundError:
+    from data import languages
 
 class Detect(object):
     def __init__(self, directory):
@@ -37,6 +40,7 @@ class Detect(object):
                             pass
         return(self.file_sizes)
 
+
     def get_percentage(self):
         for filesize in self.file_sizes:
             equation = (self.file_sizes[filesize] / self.all_bytes) * 100
@@ -46,7 +50,7 @@ class Detect(object):
             else:
                 pass
         return(self.file_percentages)
-
+    
     def detect(self, **kwargs):
         all_files = self.get_all_files()
         bytes_ = self.get_bytes()
@@ -66,11 +70,11 @@ class Detect(object):
                 elif parm == "sorted_bytes" and value is True: return(sb_result)
                 elif parm == "percentage" and value is True: return(percentage)
                 elif parm == "sorted_percentage" and value is True: return(sp_result)
+                
                 else: return(False)
 
         else:
             return(False)
-
 
 def main():
     direc = "."
@@ -95,6 +99,7 @@ def main():
         detect = Detect(direc)
         output = detect.detect(sorted_percentage=True)
         print(output)
+
 
 if __name__ == '__main__':
     main()
