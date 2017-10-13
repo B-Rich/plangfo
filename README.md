@@ -33,6 +33,7 @@ To do that, use `plangfo [option] [directory]`
 # TODO:
 
 - [x] `sb` | `--sorted-bytes`
+- [ ] `.files` | It seems like the script doesn't detect `.files`. Will fix that soon! 
 
 # Languages
 
