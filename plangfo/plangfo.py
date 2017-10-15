@@ -50,7 +50,7 @@ class Detect(object):
             else:
                 pass
         return(self.file_percentages)
-    
+
     def detect(self, **kwargs):
         all_files = self.get_all_files()
         bytes_ = self.get_bytes()
@@ -70,7 +70,7 @@ class Detect(object):
                 elif parm == "sorted_bytes" and value is True: return(sb_result)
                 elif parm == "percentage" and value is True: return(percentage)
                 elif parm == "sorted_percentage" and value is True: return(sp_result)
-                
+
                 else: return(False)
 
         else:

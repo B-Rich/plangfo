@@ -3,7 +3,7 @@
  plangfo is a module with some tools. It only has the blob languages detection thing right now tho :P
 
 ## Insallation
-`pip3 install plangfo`    
+`pip3 install plangfo`
 
 ## Usage
 Add `alias plangfo='python3 -m plangfo'` to your `.bashrc`
@@ -14,7 +14,16 @@ Here is a test repo:
 ![output](https://i.imgur.com/1lPnLTw.png)
 
 Here is my output:
+
 ![plangfo_output](https://i.imgur.com/qXsL90M.png)
+
+Something else:
+
+![another_output](https://i.imgur.com/IaWab8G.png)
+
+### How it works?
+
+The percentages are calculated based on the bytes of code for each language as reported by the `get_bytes()` method.
 
 ### Arguments/specifying directories
 To specify a directory, you need to specify an argument, and vice versa.
@@ -33,7 +42,7 @@ To do that, use `plangfo [option] [directory]`
 # TODO:
 
 - [x] `sb` | `--sorted-bytes`
-- [ ] `.files` | It seems like the script doesn't detect `.files`. Will fix that soon! 
+- [ ] `.${file}` | It seems like the script doesn't detect hidden files. Will fix that soon.
 
 # Languages
 
